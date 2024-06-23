@@ -4,7 +4,7 @@ ARG ALPINE_VERSION
 ARG BUILDPLATFORM="linux/amd64"
 ARG GO_SOCKADDR_VERSION="master"
 
-FROM --platform=${BUILDPLATFORM} golang:${GO_VERSION}-alpine${ALPINE_VERSION} AS builder
+FROM golang:${GO_VERSION}-alpine${ALPINE_VERSION} AS builder
 RUN apk add --no-cache git make
 ARG GO_SOCKADDR_VERSION
 ADD https://github.com/hashicorp/go-discover.git#${GO_SOCKADDR_VERSION} /hashicorp/go-discover
