@@ -1,11 +1,6 @@
 ARG GO_VERSION
 ARG ALPINE_VERSION
 
-# buildkit
-ARG TARGETOS="linux"
-ARG TARGETARCH="amd64"
-ARG BUILDPLATFORM="linux/amd64"
-
 FROM --platform=${BUILDPLATFORM} golang:${GO_VERSION}-alpine${ALPINE_VERSION} AS builder
 RUN apk add --no-cache git make
 ARG GO_SOCKADDR_VERSION="master"
