@@ -19,7 +19,11 @@ func main() {
 	flag.BoolVar(&help, "h", false, "print help")
 	flag.Parse()
 
-	providers := map[string]discover.Provider{}
+	providers := make(map[string]discover.Provider)
+	for k, v := range discover.Providers {
+		providers[k] = v
+	}
+
 	providers["dockerswarm"] = &discoverdockerswarm.Provider{}
 
 	d, _ := discover.New(
