@@ -17,9 +17,14 @@ target "local" {
     tags = [ "swarmlibs/discover:local" ]
 }
 
+target "binaries" {
+    inherits = [ "discover" ]
+    output = ["./bin"]
+    platforms = ["local"]
+    target = "binaries"
+}
+
 target "discover" {
-    context = "."
-    dockerfile = "Dockerfile"
     inherits = [
         "docker-metadata-action",
         "github-metadata-action",
