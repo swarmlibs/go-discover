@@ -1,5 +1,5 @@
-variable "GO_VERSION" { default = "1.22" }
-variable "ALPINE_VERSION" { default = "3.19" }
+variable "GO_VERSION" { default = "1.24" }
+variable "ALPINE_VERSION" { default = "" }
 
 target "docker-metadata-action" {}
 target "github-metadata-action" {}
